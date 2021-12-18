@@ -3,7 +3,7 @@ const fs = require("fs");
 const requests = require("requests");
 const { text } = require("express");
 const { url } = require("inspector");
-const homeFile = fs.readFileSync("home.html", "utf-8");
+const homeFile = fs.readFileSync("../public/home.html", "utf-8");
 const port = process.env.PORT || 3000;
 
 const replaceVal=(tempVal,orgVal)=>{
