@@ -4,6 +4,7 @@ const requests = require("requests");
 const { text } = require("express");
 const { url } = require("inspector");
 const homeFile = fs.readFileSync("home.html", "utf-8");
+const port = process.env.PORT || 3000;
 
 const replaceVal=(tempVal,orgVal)=>{
 var temperature =  tempVal.replace("{%tempval%}", orgVal.current.temp_c);
@@ -45,4 +46,4 @@ requests('http://api.weatherapi.com/v1/current.json?key=1a4d918d0f4540b2a9b12140
  
 });
 
-server.listen(80,"127.0.0.1");
+server.listen(port,"127.0.0.1");
